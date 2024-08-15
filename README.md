@@ -4,7 +4,7 @@
 License
 -------
 
-Copyright (c) 0x4154304D. Released under the MIT License. See
+Copyright (c) 0x4154304D. Released under the GPL License. See
 [LICENSE.md][license] for details.
 
 [license]: LICENSE
