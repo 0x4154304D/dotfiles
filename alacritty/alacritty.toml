@@ -1,10 +1,11 @@
 live_config_reload = true
 
 [window]
-opacity = 0.9
+opacity = 0.8
+blur = true
 
 [scrolling]
-history = 2000
+history = 20000
 
 [font]
 normal = { family = "UbuntuMono Nerd Font Mono", style = "Regular" }
