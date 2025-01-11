@@ -1,21 +1,21 @@
-live_config_reload = true
+general.live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.9
+opacity = 0.6
 #startup_mode = "Maximized"
-dimensions = { columns = 120, lines = 50 }
+dimensions = { columns = 80, lines = 35 }
 
 [scrolling]
 history = 20000
 
 [font]
-normal = { family = "UbuntuMono Nerd Font Mono", style = "Regular" }
-bold = { family = "UbuntuMono Nerd Font Mono", style = "Bold" }
-italic = { family = "UbuntuMono Nerd Font Mono", style = "Italic" }
-bold_italic = { family = "UbuntuMono Nerd Font Mono", style = "Bold Italic" }
+normal = { family = "Maple Mono NF", style = "Regular" }
+bold = { family = "Maple Mono NF", style = "Bold" }
+italic = { family = "Maple Mono NF", style = "Italic" }
+bold_italic = { family = "Maple Mono NF", style = "Bold Italic" }
 size = 18.0
 
 [colors]
