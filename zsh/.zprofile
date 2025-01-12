@@ -11,3 +11,5 @@ PATH=$PATH:$MAVEN_HOME/bin
 # Nodejs
 NODE_HOME=/opt/node
 PATH=$PATH:$NODE_HOME/bin
+# GnuPG pinentry
+export GPG_TTY=$(tty)
