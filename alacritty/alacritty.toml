@@ -12,10 +12,10 @@ dimensions = { columns = 80, lines = 35 }
 history = 20000
 
 [font]
-normal = { family = "Maple Mono NF", style = "Regular" }
-bold = { family = "Maple Mono NF", style = "Bold" }
-italic = { family = "Maple Mono NF", style = "Italic" }
-bold_italic = { family = "Maple Mono NF", style = "Bold Italic" }
+normal = { family = "Maple Mono NF CN", style = "Regular" }
+bold = { family = "Maple Mono NF CN", style = "Bold" }
+italic = { family = "Maple Mono NF CN", style = "Italic" }
+bold_italic = { family = "Maple Mono NF CN", style = "Bold Italic" }
 size = 18.0
 
 [colors]
