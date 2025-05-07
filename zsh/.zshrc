@@ -101,6 +101,12 @@ setopt hist_ignore_all_dups
 # avoid hist dups histroy in .zsh_history
 setopt hist_ignore_dups
 
+# set fzf default command
+export FZF_DEFAULT_COMMAND='rg --files'
+
+# llvm
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/at0m/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
