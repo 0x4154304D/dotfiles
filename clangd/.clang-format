@@ -1,0 +1,28 @@
+BasedOnStyle: LLVM
+
+# 缩进宽度
+IndentWidth: 2
+UseTab: Never                  # 不使用 Tab，统一空格kk
+ColumnLimit: 80               # 每行最大字符数，LLVM 默认为 80，可扩展为 100
+BreakBeforeBraces: Attach      # 大括号不换行（LLVM 默认）
+
+AllowShortFunctionsOnASingleLine: Inline  # 允许单行短函数
+
+# 控制 include 的处理方式
+SortIncludes: false
+IncludeBlocks: Preserve
+IncludeCategories:
+  - Regex: '.*'
+    Priority: 0
+    SortPriority: 0
+    CaseSensitive: false
+
+# 指针对齐方式
+DerivePointerAlignment: false
+PointerAlignment: Left         # `int* ptr` 而非 `int *ptr`
+
+# C 特有的设置
+Language: C
+
+# 保留宏定义结构（如 #define 块）
+ReflowComments: false

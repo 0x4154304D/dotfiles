@@ -124,3 +124,6 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim installexport PATH="/opt/homebrew/opt/bazel@7/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/at0m/.antigravity/antigravity/bin:$PATH"

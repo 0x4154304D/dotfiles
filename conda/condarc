@@ -1,6 +1,9 @@
+# base
+show_channel_urls: true
+auto_activate_base: false
+# channel
 channels:
   - defaults
-show_channel_urls: true
 default_channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
@@ -8,4 +11,7 @@ default_channels:
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-auto_activate_base: false
+# perfom
+solver: libmamba
+channel_priority: flexible
+repodata_use_zst: true
