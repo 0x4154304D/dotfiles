@@ -13,7 +13,7 @@ export PATH=$PATH:/opt/homebrew/opt/llvm/bin
 # brew
 export PATH=$PATH:/opt/homebrew/bin
 # vagrant
-export VAGRANT_HOME="/Volumes/WDC/vagrant_boxes"
+export VAGRANT_HOME="/Volumes/GLOWAY/vagrant_boxes"
 # Use Neovim as "prefered editor"
 export VISUAL=nvim
 # Maven
@@ -25,16 +25,17 @@ export PATH=$PATH:$NODE_HOME/bin
 # GnuPG pinentry
 export GPG_TTY=$(tty)
 # lima
-export LIMA_HOME=/Volumes/WDC/lima/config
+export LIMA_HOME=/Volumes/GLOWAY/lima/config
 # Homebrew
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-# ollama
-export OLLAMA_MODELS="/Volumes/WDC/ollama/models"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
+# history timestamp
+if [ -n "$BASH_VERSION" ]; then
+    export HISTTIMEFORMAT='%F %T '
+fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/at0m/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
