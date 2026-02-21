@@ -27,8 +27,10 @@ export GPG_TTY=$(tty)
 # lima
 export LIMA_HOME=/Volumes/GLOWAY/lima/config
 # Homebrew
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+# Homebrew Bottles
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
@@ -50,3 +52,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+# local.bin(include cursur agent)
+export PATH="$HOME/.local/bin:$PATH"
