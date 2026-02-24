@@ -45,15 +45,15 @@ vim.o.inccommand = "split"
 vim.o.confirm = true
 
 -- ─── Autocmds ───────────────────────────────────────────────────────────────
-vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = function()
-    local groups = { "Normal", "NormalNC", "NormalFloat", "SignColumn", "EndOfBuffer" }
-    for _, group in ipairs(groups) do
-      vim.api.nvim_set_hl(0, group, { bg = "NONE" })
-    end
-  end,
-})
-vim.cmd.colorscheme(vim.g.colors_name or "default")
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   callback = function()
+--     local groups = { "Normal", "NormalNC", "NormalFloat", "SignColumn", "EndOfBuffer" }
+--     for _, group in ipairs(groups) do
+--       vim.api.nvim_set_hl(0, group, { bg = "NONE" })
+--     end
+--   end,
+-- })
+-- vim.cmd.colorscheme(vim.g.colors_name or "default")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",

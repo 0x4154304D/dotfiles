@@ -87,8 +87,18 @@ return {
         local buf = ev.buf
         vim.keymap.set("n", "grr", builtin.lsp_references, { buffer = buf, desc = "[G]oto [R]eferences" })
         vim.keymap.set("n", "grd", builtin.lsp_definitions, { buffer = buf, desc = "[G]oto [D]efinition" })
-        vim.keymap.set("n", "gri", builtin.lsp_implementations, { buffer = buf, desc = "[G]oto [I]mplementation" })
-        vim.keymap.set("n", "grt", builtin.lsp_type_definitions, { buffer = buf, desc = "[G]oto [T]ype" })
+        vim.keymap.set("n", "gri", function()
+          local ok = pcall(builtin.lsp_implementations)
+          if not ok then
+            vim.notify("No LSP implementations found", vim.log.levels.INFO)
+          end
+        end, { buffer = buf, desc = "[G]oto [I]mplementation" })
+        vim.keymap.set("n", "grt", function()
+          local ok = pcall(builtin.lsp_type_definitions)
+          if not ok then
+            vim.notify("No LSP type definitions found", vim.log.levels.INFO)
+          end
+        end, { buffer = buf, desc = "[G]oto [T]ype" })
         vim.keymap.set("n", "gO", builtin.lsp_document_symbols, { buffer = buf, desc = "Document symbols" })
         vim.keymap.set("n", "gW", builtin.lsp_dynamic_workspace_symbols, { buffer = buf, desc = "Workspace symbols" })
       end,
