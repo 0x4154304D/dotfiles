@@ -14,39 +14,39 @@
 ]]
 
 return {
-  "stevearc/conform.nvim",
-  event = "BufWritePre",
-  cmd = "ConformInfo",
-  keys = {
-    {
-      "<leader>cf",
-      function()
-        require("conform").format({ async = true, lsp_format = "fallback" })
-      end,
-      desc = "Format file",
-    },
-  },
-  opts = {
-    notify_on_error = false,
-    formatters_by_ft = {
-      go = { "goimports", "gofumpt", "golines" },
-      c = { "clang-format" },
-      cpp = { "clang-format" },
-      lua = { "stylua" },
-      python = { "ruff_format", "ruff_organize_imports" },
-      sh = { "shfmt" },
-      markdown = { "prettier" },
-      yaml = { "prettier" },
-      -- 对所有 filetype 跑一遍 codespell（纠拼写），需安装：brew install codespell / pip install codespell
-      ["*"] = { "codespell" },
-      -- 多 formatter 只跑第一个可用的：javascript = { "prettierd", "prettier", stop_after_first = true },
-    },
-    format_on_save = function(bufnr)
-      local formatters = require("conform").list_formatters(bufnr)
-      if not formatters or #formatters == 0 then
-        return nil
-      end
-      return { timeout_ms = 500, lsp_format = "fallback" }
-    end,
-  },
+	"stevearc/conform.nvim",
+	event = "BufWritePre",
+	cmd = "ConformInfo",
+	keys = {
+		{
+			"<leader>cf",
+			function()
+				require("conform").format({ async = true, lsp_format = "fallback" })
+			end,
+			desc = "Format file",
+		},
+	},
+	opts = {
+		notify_on_error = false,
+		formatters_by_ft = {
+			go = { "goimports", "gofumpt", "golines" },
+			c = { "clang-format" },
+			cpp = { "clang-format" },
+			lua = { "stylua" },
+			python = { "ruff_format", "ruff_organize_imports" },
+			sh = { "shfmt" },
+			markdown = { "prettier" },
+			yaml = { "prettier" },
+			-- 对所有 filetype 跑一遍 codespell（纠拼写），需安装：brew install codespell / pip install codespell
+			["*"] = { "codespell" },
+			-- 多 formatter 只跑第一个可用的：javascript = { "prettierd", "prettier", stop_after_first = true },
+		},
+		format_on_save = function(bufnr)
+			local formatters = require("conform").list_formatters(bufnr)
+			if not formatters or #formatters == 0 then
+				return nil
+			end
+			return { timeout_ms = 500, lsp_format = "fallback" }
+		end,
+	},
 }
