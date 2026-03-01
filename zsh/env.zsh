@@ -3,8 +3,10 @@ export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vi'
+  export VISUAL='vi'
 else
   export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
 # set fzf default command
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -14,8 +16,6 @@ export PATH=$PATH:/opt/homebrew/opt/llvm/bin
 export PATH=$PATH:/opt/homebrew/bin
 # vagrant
 export VAGRANT_HOME="/Volumes/GLOWAY/vagrant_boxes"
-# Use Neovim as "prefered editor"
-export VISUAL=nvim
 # Maven
 MAVEN_HOME=/opt/maven
 export PATH=$PATH:$MAVEN_HOME/bin
@@ -34,10 +34,6 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-# history timestamp
-if [ -n "$BASH_VERSION" ]; then
-    export HISTTIMEFORMAT='%F %T '
-fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/at0m/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
