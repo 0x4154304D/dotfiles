@@ -1,11 +1,16 @@
 return {
 	"saghen/blink.cmp",
-	version = "1.*",
 	event = "InsertEnter",
+	build = function()
+		if vim.fn.executable("cargo") ~= 1 then
+			return
+		end
+		require("blink.cmp").build():pwait()
+	end,
 	dependencies = {
+		"saghen/blink.lib",
 		{
 			"L3MON4D3/LuaSnip",
-			version = "2.*",
 			build = (function()
 				if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
 					return
@@ -29,7 +34,7 @@ return {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 		snippets = { preset = "luasnip" },
-		fuzzy = { implementation = "prefer_rust" },
+		fuzzy = { implementation = vim.fn.executable("cargo") == 1 and "prefer_rust_with_warning" or "lua" },
 		signature = { enabled = true },
 	},
 }

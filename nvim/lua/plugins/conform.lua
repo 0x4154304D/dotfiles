@@ -7,7 +7,7 @@
   - lsp_format 控制何时用 LSP：never / fallback（无外部时用 LSP）/ prefer / first / last。
 
   当前配置：
-  - formatters_by_ft：go/c/cpp/lua/python/sh/markdown/yaml 等；["*"] = codespell 对所有 ft 纠拼写。
+  - formatters_by_ft：go/c/cpp/lua/python/sh/markdown/yaml 等；不在保存链路里自动跑拼写纠正。
   - format_on_save：有 formatter 即执行（含 c/cpp）；lsp_format = "fallback" 无外部 formatter 时用 LSP。
   - <leader>cf：手动格式化，async + lsp_format = "fallback"（无外部时用 LSP）。
   - cmd = "ConformInfo"：运行 :ConformInfo 时也会加载插件，方便排查。
@@ -37,8 +37,6 @@ return {
 			sh = { "shfmt" },
 			markdown = { "prettier" },
 			yaml = { "prettier" },
-			-- 对所有 filetype 跑一遍 codespell（纠拼写），需安装：brew install codespell / pip install codespell
-			["*"] = { "codespell" },
 			-- 多 formatter 只跑第一个可用的：javascript = { "prettierd", "prettier", stop_after_first = true },
 		},
 		format_on_save = function(bufnr)

@@ -22,6 +22,10 @@ export PATH=$PATH:$MAVEN_HOME/bin
 # Nodejs
 NODE_HOME=/opt/node
 export PATH=$PATH:$NODE_HOME/bin
+# Rust
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+. "$HOME/.cargo/env"
 # GnuPG pinentry
 export GPG_TTY=$(tty)
 # lima
